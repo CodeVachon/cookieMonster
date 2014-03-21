@@ -5,7 +5,7 @@
 	--->
 
 	<cffunction name="init">
-		<cfreturn super.init() />
+		<cfreturn this />
 	</cffunction>
 
 	<cffunction name="setCookie">
