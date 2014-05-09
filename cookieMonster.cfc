@@ -1,9 +1,4 @@
 <cfcomponent output="false" displayname="cookieMonster">
-	<!---
-		Why Does this Exists?
-		Because CF10 dosnt allow you to expire a cookie natively in script.
-	--->
-
 	<cffunction name="init">
 		<cfreturn this />
 	</cffunction>
