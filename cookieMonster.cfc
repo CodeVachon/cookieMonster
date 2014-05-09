@@ -23,20 +23,16 @@
 
 	<cffunction name="getValue">
 		<cfargument name="name" type="string" required="true" />
-		<cfscript>
-			if (this.doesExists(ARGUMENTS.name)) {
-				return COOKIE[trim(ARGUMENTS.name)];
-			} else {
-				return javaCast("null","");
-			}
-		</cfscript>
+		<cfif this.doesExists(ARGUMENTS.name)>
+			<cfreturn COOKIE[trim(ARGUMENTS.name)] />
+		<cfelse>
+			<cfreturn javaCast("null","") />
+		</cfif>
 	</cffunction>
 
 
 	<cffunction name="doesExists" returntype="boolean">
 		<cfargument name="name" type="string" required="true" />
-		<cfscript>
-			return (structKeyExists(COOKIE,trim(ARGUMENTS.name)));
-		</cfscript>
+		<cfreturn (structKeyExists(COOKIE,trim(ARGUMENTS.name))) />
 	</cffunction>
 </cfcomponent>
